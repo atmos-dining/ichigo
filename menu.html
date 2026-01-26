@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お料理｜焼とりとぶた串 一期（いちご）</title>
+  <link rel="icon" href="./favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="焼とりとぶた串 一期（いちご）のお料理ページ。名物のぶた串・焼とり・巻き串・野菜串・一品・揚げ物などをご紹介します。">
+
+  <!-- Google Fonts: Noto Serif JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<div id="top"></div>
+
+<!-- ヘッダー（一期） -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="./index.html" class="site-logo">【公式】焼とりとぶた串 一期（いちご）</a>
+      <div class="site-tagline">西新商店街の焼とり・ぶた串</div>
+    </div>
+
+    <div class="header-right">
+      <div class="header-tel header-only-desktop">
+        <span class="tel-label">ご予約・お問い合わせ</span>
+        <a href="tel:0928213791" class="tel-number">092-821-3791</a>
+      </div>
+
+      <!-- ネット予約URLは必要に応じて差し替え -->
+      <a href="#"
+         target="_blank" rel="noopener"
+         class="btn-primary header-reserve header-only-desktop">
+        ネット予約はこちら
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PC用ナビ（下層ページは “各ページ” にリンクする） -->
+  <nav class="global-nav header-only-desktop">
+    <ul>
+      <li><a href="./index.html#top">トップ</a></li>
+      <li><a href="./index.html#concept">一期のこだわり</a></li>
+      <li><a href="./course.html">ご宴会コース</a></li>
+      <li><a href="./menu.html" aria-current="page">お料理</a></li>
+      <li><a href="./drink.html">ドリンク</a></li>
+      <li><a href="./index.html#space">店内・空間</a></li>
+      <li><a href="./index.html#blog">ブログ・お知らせ</a></li>
+      <li><a href="./index.html#reserve">ご予約について</a></li>
+      <li><a href="./index.html#access">アクセス</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- スマホ用 -->
+<div class="drawer-overlay" id="drawerOverlay" data-close="drawer" aria-hidden="true"></div>
+<aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="閉じる" data-close="drawer">×</button>
+  <nav>
+    <ul>
+      <li><a href="./index.html#top">トップ</a></li>
+      <li><a href="./index.html#concept">一期のこだわり</a></li>
+      <li><a href="./course.html">ご宴会コース</a></li>
+      <li><a href="./menu.html" aria-current="page">お料理</a></li>
+      <li><a href="./drink.html">ドリンク</a></li>
+      <li><a href="./index.html#space">店内・空間</a></li>
+      <li><a href="./index.html#blog">ブログ・お知らせ</a></li>
+      <li><a href="./index.html#reserve">ご予約について</a></li>
+      <li><a href="./index.html#access">アクセス</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="main">
+
+  <!-- ページ見出し（★ is-inview を最初から付ける＝本文が消えない） -->
+  <section class="section is-inview page-head">
+    <div class="section-inner">
+      <h1 class="page-title">お料理</h1>
+      <p class="page-lead">
+        名物のぶた串・焼とり・巻き串・一品まで。<br>
+        価格は掲載情報をもとにした目安（税込）です。最新は店頭でご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 名物：ぶた串 -->
+  <section class="section is-inview menu-page">
+    <div class="section-inner">
+      <h2 class="section-title">名物 ぶた串</h2>
+
+      <div class="mp-grid mp-grid--feature">
+        <div class="mp-card">
+          <div class="mp-card__title">豚バラ 2本串</div>
+          <div class="mp-card__price">319円</div>
+        </div>
+        <div class="mp-card">
+          <div class="mp-card__title">豚しそチーズ 2本串</div>
+          <div class="mp-card__price">429円</div>
+        </div>
+        <div class="mp-card">
+          <div class="mp-card__title">豚チーズ 2本串</div>
+          <div class="mp-card__price">429円</div>
+        </div>
+        <div class="mp-card">
+          <div class="mp-card__title">豚アボカドチーズ 2本串</div>
+          <div class="mp-card__price">539円</div>
+        </div>
+      </div>
+
+      <p class="mp-note">※ぶた串の価格は食べログ掲載情報を参照しています。</p>
+    </div>
+  </section>
+
+  <!-- 焼とり / 巻き串 / 野菜串 -->
+  <section class="section is-inview menu-page menu-page--meat">
+    <div class="section-inner">
+      <h2 class="section-title">串もの</h2>
+      <p class="section-lead">焼とり・巻き串・野菜串</p>
+
+      <div class="mp-grid mp-grid--4">
+
+        <!-- 焼とり -->
+        <article class="mp-panel">
+          <h3 class="mp-panel__title">焼とり</h3>
+          <ul class="mp-list">
+            <li class="mp-item"><span>鶏もも</span><span>165円</span></li>
+            <li class="mp-item"><span>鶏皮</span><span>165円</span></li>
+            <li class="mp-item"><span>砂ずり</span><span>165円</span></li>
+            <li class="mp-item"><span>ハツ</span><span>165円</span></li>
+            <li class="mp-item"><span>つくね</span><span>275円</span></li>
+            <li class="mp-item"><span>白レバー</span><span>319円</span></li>
+            <li class="mp-item"><span>特製つくね（月見）</span><span>319円</span></li>
+            <li class="mp-item"><span>特製つくね（チーズ）</span><span>319円</span></li>
+          </ul>
+        </article>
+
+        <!-- 巻き串 -->
+        <article class="mp-panel">
+          <h3 class="mp-panel__title">巻き串</h3>
+          <ul class="mp-list">
+            <li class="mp-item"><span>えのき巻き</span><span>275円</span></li>
+            <li class="mp-item"><span>しそ巻き</span><span>275円</span></li>
+            <li class="mp-item"><span>ニラ巻き</span><span>275円</span></li>
+            <li class="mp-item"><span>トマト巻き</span><span>275円</span></li>
+            <li class="mp-item"><span>アスパラ巻き</span><span>319円</span></li>
+            <li class="mp-item"><span>レタス巻き</span><span>319円</span></li>
+            <li class="mp-item"><span>特製チーズ巻き</span><span>319円</span></li>
+          </ul>
+        </article>
+
+        <!-- 野菜串 -->
+        <article class="mp-panel">
+          <h3 class="mp-panel__title">野菜串</h3>
+          <ul class="mp-list">
+            <li class="mp-item"><span>玉ねぎ</span><span>165円</span></li>
+            <li class="mp-item"><span>ししとう</span><span>165円</span></li>
+            <li class="mp-item"><span>しいたけ</span><span>165円</span></li>
+            <li class="mp-item"><span>白ネギ</span><span>165円</span></li>
+            <li class="mp-item"><span>アボカド</span><span>275円</span></li>
+            <li class="mp-item"><span>ピーマン</span><span>275円</span></li>
+          </ul>
+        </article>
+
+        <!-- すぐ来る -->
+        <article class="mp-panel">
+          <h3 class="mp-panel__title">すぐ来る</h3>
+          <ul class="mp-list">
+            <li class="mp-item"><span>枝豆</span><span>319円</span></li>
+            <li class="mp-item"><span>たたき胡瓜</span><span>319円</span></li>
+            <li class="mp-item"><span>トマトスライス</span><span>319円</span></li>
+            <li class="mp-item"><span>冷奴</span><span>319円</span></li>
+            <li class="mp-item"><span>山芋とろろ</span><span>319円</span></li>
+            <li class="mp-item"><span>自家製ポテトサラダ</span><span>429円</span></li>
+            <li class="mp-item"><span>塩昆布キャベツ</span><span>429円</span></li>
+            <li class="mp-item"><span>ピーマン肉味噌</span><span>429円</span></li>
+            <li class="mp-item"><span>アボカド</span><span>429円</span></li>
+            <li class="mp-item"><span>トマトチーズ</span><span>429円</span></li>
+            <li class="mp-item"><span>鶏酢もつ</span><span>429円</span></li>
+            <li class="mp-item"><span>もつ煮込み</span><span>539円</span></li>
+            <li class="mp-item"><span>白レバーパテ</span><span>539円</span></li>
+            <li class="mp-item"><span>胡麻カンパチ</span><span>759円</span></li>
+          </ul>
+        </article>
+
+      </div>
+
+      <p class="mp-note">
+        価格は掲載情報をもとにした目安（税込）です。最新は店頭でご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 揚げ物 -->
+  <section class="section is-inview menu-page menu-page--side">
+    <div class="section-inner">
+      <h2 class="section-title">あげもの</h2>
+
+      <div class="mp-grid mp-grid--3">
+        <article class="mp-panel">
+          <h3 class="mp-panel__title">揚げ物</h3>
+          <ul class="mp-list">
+            <li class="mp-item"><span>ポテトフライ</span><span>429円</span></li>
+            <li class="mp-item"><span>揚げたこ焼き</span><span>429円</span></li>
+            <li class="mp-item"><span>タコの唐揚げ</span><span>539円</span></li>
+            <li class="mp-item"><span>なんこつ唐揚げ</span><span>539円</span></li>
+            <li class="mp-item"><span>鶏の唐揚げ</span><span>539円</span></li>
+            <li class="mp-item"><span>自家製チキン南蛮</span><span>539円</span></li>
+            <li class="mp-item"><span>チーズ春巻き</span><span>539円</span></li>
+            <li class="mp-item"><span>とうもろこしの唐揚げ</span><span>539円</span></li>
+          </ul>
+          <p class="drinkcat-note">※価格は掲載情報をもとにした目安（税込）です。</p>
+        </article>
+      </div>
+
+      <p class="mp-note">
+        ※仕入れ・時期により内容や価格が変わる場合があります。<br>
+        お問い合わせ：<a href="tel:0928213791">092-821-3791</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 共通下部を差し込む場所（予約〜アクセス〜フッター） -->
+  <div id="shared-bottom"></div>
+
+  <!-- ページトップボタン（右下固定：全ページ共通） -->
+  <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
+</main>
+
+<script>
+  // Drawer
+  const btn = document.querySelector('.nav-toggle');
+  const drawer = document.querySelector('#drawerMenu');
+  const overlay = document.querySelector('#drawerOverlay');
+
+  function openDrawer(){
+    drawer.classList.add('is-open');
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    btn?.setAttribute('aria-expanded', 'true');
+    drawer?.setAttribute('aria-hidden', 'false');
+    overlay?.setAttribute('aria-hidden', 'false');
+  }
+  function closeDrawer(){
+    drawer.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    btn?.setAttribute('aria-expanded', 'false');
+    drawer?.setAttribute('aria-hidden', 'true');
+    overlay?.setAttribute('aria-hidden', 'true');
+  }
+
+  btn?.addEventListener('click', () => drawer.classList.contains('is-open') ? closeDrawer() : openDrawer());
+  document.querySelectorAll('[data-close="drawer"]').forEach(el => el.addEventListener('click', closeDrawer));
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // 共通下部（予約〜フッター）を読み込む
+  // ※ menu.html がルート直下ならこのまま。サブフォルダなら ../partials/bottom.html に直す
+  fetch('./partials/bottom.html')
+    .then(r => r.text())
+    .then(html => {
+      const mount = document.querySelector('#shared-bottom');
+      if (!mount) return;
+      mount.innerHTML = html;
+
+      // 差し込まれたsectionも “必ず表示”
+      mount.querySelectorAll('.section').forEach(sec => sec.classList.add('is-inview'));
+    })
+    .catch(() => {
+      // 読み込み失敗しても本文は見える（is-inviewをHTML側で付けてるため）
+    });
+
+  // ページトップボタン：一定スクロールで表示
+  const pageTop = document.querySelector('.page-top');
+  function togglePageTop(){
+    if(!pageTop) return;
+    const y = window.scrollY || document.documentElement.scrollTop;
+    if (y > 480) pageTop.classList.add('is-show');
+    else pageTop.classList.remove('is-show');
+  }
+  window.addEventListener('scroll', togglePageTop, { passive: true });
+  togglePageTop();
+</script>
+
+</body>
+</html>
