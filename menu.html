@@ -85,12 +85,12 @@
 <main id="main">
 
   <!-- ページ見出し（★ is-inview を最初から付ける＝本文が消えない） -->
-  <section class="section is-inview page-head">
+  <section class="page-hero">
     <div class="section-inner">
       <h1 class="page-title">お料理</h1>
       <p class="page-lead">
         名物のぶた串・焼とり・巻き串・一品まで。<br>
-        価格は掲載情報をもとにした目安（税込）です。最新は店頭でご確認ください。
+        ※仕入れ・時期により内容や価格が変わる場合があります。最新は店頭でご確認ください。
       </p>
     </div>
   </section>
@@ -98,6 +98,12 @@
   <!-- 名物：ぶた串 -->
   <section class="section is-inview menu-page">
     <div class="section-inner">
+
+      <!-- 名物 ぶた串 画像 -->
+    <div class="menu-feature-image">
+      <img src="./images/menu-butagushi.jpg" alt="一期 名物ぶた串">
+    </div>
+
       <h2 class="section-title">名物 ぶた串</h2>
 
       <div class="mp-grid mp-grid--feature">
@@ -119,14 +125,13 @@
         </div>
       </div>
 
-      <p class="mp-note">※ぶた串の価格は食べログ掲載情報を参照しています。</p>
     </div>
   </section>
 
   <!-- 焼とり / 巻き串 / 野菜串 -->
   <section class="section is-inview menu-page menu-page--meat">
     <div class="section-inner">
-      <h2 class="section-title">串もの</h2>
+      <h2 class="section-title">串もの・一品</h2>
       <p class="section-lead">焼とり・巻き串・野菜串</p>
 
       <div class="mp-grid mp-grid--4">
@@ -196,40 +201,67 @@
 
       </div>
 
-      <p class="mp-note">
-        価格は掲載情報をもとにした目安（税込）です。最新は店頭でご確認ください。
-      </p>
+    
     </div>
   </section>
 
-  <!-- 揚げ物 -->
-  <section class="section is-inview menu-page menu-page--side">
-    <div class="section-inner">
-      <h2 class="section-title">あげもの</h2>
+  <!-- 揚げ物 / 炙り / 〆 / 甘味 -->
+<section class="section is-inview menu-page menu-page--side">
+  <div class="section-inner">
+    <h2 class="section-title">揚げ物・炙り・〆・甘味</h2>
 
-      <div class="mp-grid mp-grid--3">
-        <article class="mp-panel">
-          <h3 class="mp-panel__title">揚げ物</h3>
-          <ul class="mp-list">
-            <li class="mp-item"><span>ポテトフライ</span><span>429円</span></li>
-            <li class="mp-item"><span>揚げたこ焼き</span><span>429円</span></li>
-            <li class="mp-item"><span>タコの唐揚げ</span><span>539円</span></li>
-            <li class="mp-item"><span>なんこつ唐揚げ</span><span>539円</span></li>
-            <li class="mp-item"><span>鶏の唐揚げ</span><span>539円</span></li>
-            <li class="mp-item"><span>自家製チキン南蛮</span><span>539円</span></li>
-            <li class="mp-item"><span>チーズ春巻き</span><span>539円</span></li>
-            <li class="mp-item"><span>とうもろこしの唐揚げ</span><span>539円</span></li>
-          </ul>
-          <p class="drinkcat-note">※価格は掲載情報をもとにした目安（税込）です。</p>
-        </article>
-      </div>
+    <div class="mp-grid mp-grid--3">
 
-      <p class="mp-note">
-        ※仕入れ・時期により内容や価格が変わる場合があります。<br>
-        お問い合わせ：<a href="tel:0928213791">092-821-3791</a>
-      </p>
+      <!-- 既存：揚げ物 -->
+      <article class="mp-panel">
+        <h3 class="mp-panel__title">揚げ物</h3>
+        <ul class="mp-list">
+          <li class="mp-item"><span>ポテトフライ</span><span>429円</span></li>
+          <li class="mp-item"><span>揚げたこ焼き</span><span>429円</span></li>
+          <li class="mp-item"><span>タコの唐揚げ</span><span>539円</span></li>
+          <li class="mp-item"><span>なんこつ唐揚げ</span><span>539円</span></li>
+          <li class="mp-item"><span>鶏の唐揚げ</span><span>539円</span></li>
+          <li class="mp-item"><span>自家製チキン南蛮</span><span>539円</span></li>
+          <li class="mp-item"><span>チーズ春巻き</span><span>539円</span></li>
+          <li class="mp-item"><span>とうもろこしの唐揚げ</span><span>539円</span></li>
+        </ul>
+        
+      </article>
+
+      <!-- 追加：炙り -->
+      <article class="mp-panel">
+        <h3 class="mp-panel__title">炙り</h3>
+        <ul class="mp-list">
+          <li class="mp-item"><span>エイヒレ</span><span>429円</span></li>
+          <li class="mp-item"><span>イカの一夜干し</span><span>649円</span></li>
+          <li class="mp-item"><span>カナギの炙り</span><span>539円</span></li>
+        </ul>
+        
+      </article>
+
+      <!-- 追加：〆・甘味 -->
+      <article class="mp-panel">
+        <h3 class="mp-panel__title">〆・甘味</h3>
+        <ul class="mp-list">
+          <li class="mp-item"><span>土鍋でつくる かしわ飯</span><span>979円</span></li>
+          <li class="mp-item"><span>ひとくち とりにゅう麺</span><span>429円</span></li>
+          <li class="mp-item"><span>焼きおにぎり串</span><span>319円</span></li>
+          <li class="mp-item"><span>おにぎり（梅・しゃけ・明太）</span><span>209円</span></li>
+          <li class="mp-item"><span>自家製ほうじ茶ブリュレ</span><span>539円</span></li>
+          <li class="mp-item"><span>W.icecreamの大阿蘇ミルク</span><span>429円</span></li>
+        </ul>
+
+      </article>
+
+    </div>
+
+    <p class="mp-note">
+      ※仕入れ・時期により内容や価格が変わる場合があります。<br>
+      お問い合わせ：<a href="tel:0928213791">092-821-3791</a>
+    </p>
     </div>
   </section>
+
 
   <!-- 共通下部を差し込む場所（予約〜アクセス〜フッター） -->
   <div id="shared-bottom"></div>

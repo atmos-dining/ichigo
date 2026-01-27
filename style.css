@@ -1007,8 +1007,10 @@ body:not(.is-home) main{
 ========================================= */
 
 .page-head{
-  padding-top: calc(var(--header-h) + 24px);
+  padding-top: 0;        /* ← ヘッダー分は main が持つ */
+  padding-bottom: 24px;  /* ← ドリンクと同じ見え方に寄せる */
 }
+
 
 .page-title{
   text-align: center;
@@ -1147,7 +1149,7 @@ body:not(.is-home) main{
 /* ===== drink page ===== */
 
 .page-hero{
-  padding-top: calc(var(--header-h) + 28px);
+  padding-top: 0;
   padding-bottom: 24px;
   background: #faf7f4;
 }
@@ -1403,5 +1405,118 @@ a.btn-more:hover{
     height: auto;
     aspect-ratio: 16 / 9;
     margin-bottom: 8px;
+  }
+}
+
+/* =========================
+   menu.html：セクション間の余白を全体的に詰める
+   （menu.html の section.section のみ効かせる）
+   ========================= */
+
+/* PC */
+.section.menu-page{
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+
+/* ページ見出しは、さらに少し詰める（好み） */
+.section.page-head{
+  padding-top: 44px;     /* ←ヘッダー下の余白もここで統一 */
+  padding-bottom: 32px;
+}
+
+/* タイトル周りの“中身の余白”も少し縮める */
+.menu-page .section-title{
+  margin-bottom: 18px;
+}
+.menu-page .section-lead{
+  margin-bottom: 22px;
+}
+
+/* スマホ */
+@media (max-width: 640px){
+  .section.menu-page{
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .section.page-head{
+    padding-top: 32px;
+    padding-bottom: 22px;
+  }
+}
+
+/* =========================
+   名物ぶた串：セクション画像
+   ========================= */
+
+.menu-feature-image{
+  max-width: 1080px;
+  margin: 0 auto 28px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.menu-feature-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* スマホは少しコンパクトに */
+@media (max-width: 640px){
+  .menu-feature-image{
+    margin-bottom: 20px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================
+   ドリンクページ：見出し下イメージ
+   ========================= */
+
+.drink-feature{
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.drink-feature-image{
+  max-width: 1080px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.drink-feature-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* スマホ調整 */
+@media (max-width: 640px){
+  .drink-feature{
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+  .drink-feature-image{
+    border-radius: 14px;
+  }
+}
+
+/* menu.html：ページ見出しは .section の余白を消して drink と揃える */
+.section.page-head{
+  padding-top: 0 !important;
+  padding-bottom: 24px !important;
+}
+
+/* スマホも合わせる */
+@media (max-width: 640px){
+  .section.page-head{
+    padding-top: 0 !important;
+    padding-bottom: 22px !important;
   }
 }
