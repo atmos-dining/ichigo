@@ -361,7 +361,7 @@ body:not(.is-home) .section{
 
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)),
-    url("./images/hero-bunta.jpg");
+    url("./images/hero-ichigo.jpg");
   background-size: cover;
   background-position: center;
 }
