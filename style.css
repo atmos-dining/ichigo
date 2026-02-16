@@ -648,9 +648,9 @@ body:not(.is-home) .section{
   background-position: center;
 }
 
-.menu-image-1{ background-image: url("./images/menu-megakarubi.jpg"); }
-.menu-image-2{ background-image: url("./images/menu-marucho.jpg"); }
-.menu-image-3{ background-image: url("./images/menu-nikuzushi.jpg"); }
+.menu-image-1{ background-image: url("./images/menu-butagushi.jpg"); }
+.menu-image-2{ background-image: url("./images/menu-kushimori.jpg"); }
+.menu-image-3{ background-image: url("./images/menu-kashiwameshi.jpg"); }
 
 .menu-card h3{
   font-size: 16px;
