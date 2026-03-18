@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ブログ・お知らせ｜焼とりとぶた串 一期（いちご）</title>
+  <meta name="description" content="大衆焼肉ぶんたのブログ・お知らせ一覧。最新情報や来店前に役立つ情報を更新しています。" />
+
+  <link rel="icon" href="../favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+<!-- =====================
+  ブログ専用ヘッダー（スマホ：ハンバーガーあり）
+===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="../index.html#top" class="site-logo">【公式】焼とりとぶた串 一期（いちご）</a>
+      <div class="site-tagline">西新商店街の焼とり・ぶた串</div>
+    </div>
+
+    <!-- ここは desktop 要素と mobile 要素を分ける（重要） -->
+    <div class="header-right">
+      <!-- PC専用：予約ボタン -->
+      <a href="https://yoyaku.toreta.in/bunta"
+         target="_blank" rel="noopener"
+         class="btn-primary header-reserve header-only-desktop">
+        ネット予約はこちら
+      </a>
+
+      <!-- スマホ用：ハンバーガー（blog/index.html でも必ず出る） -->
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PC用ナビ：すべてメイントップへ -->
+  <nav class="global-nav header-only-desktop">
+    <ul>
+      <li><a href="../index.html#top">トップ</a></li>
+      <li><a href="../index.html#concept">一期のこだわり</a></li>
+      <li><a href="../index.html#course">ご宴会コース</a></li>
+      <li><a href="../index.html#menu">お料理</a></li>
+      <li><a href="../index.html#drink">ドリンク</a></li>
+      <li><a href="../index.html#space">店内・空間</a></li>
+      <li><a href="../index.html#blog">ブログ・お知らせ</a></li>
+      <li><a href="../index.html#reserve">ご予約について</a></li>
+      <li><a href="../index.html#access">アクセス</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- スマホ用：オーバーレイ -->
+<div class="drawer-overlay" data-close="drawer" aria-hidden="true"></div>
+
+<!-- スマホ用：右から出るドロワー -->
+<aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="メニューを閉じる" data-close="drawer">×</button>
+  <nav>
+    <ul>
+      <li><a href="../index.html#top">トップ</a></li>
+      <li><a href="../index.html#concept">一期のこだわり</a></li>
+      <li><a href="../index.html#course">ご宴会コース</a></li>
+      <li><a href="../index.html#menu">お料理</a></li>
+      <li><a href="../index.html#drink">ドリンク</a></li>
+      <li><a href="../index.html#space">店内・空間</a></li>
+      <li><a href="../index.html#blog">ブログ・お知らせ</a></li>
+      <li><a href="../index.html#reserve">ご予約について</a></li>
+      <li><a href="../index.html#access">アクセス</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main id="top">
+
+  <!-- =====================
+    ページ見出し
+  ===================== -->
+  <section class="section page-head is-inview">
+    <div class="section-inner">
+      <h1 class="page-title">ブログ・お知らせ</h1>
+      <p class="page-lead">
+        ご宴会情報・初めての方向けのご案内など、来店前に役立つ情報を発信しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================
+    ブログ一覧（posts.jsonから自動生成）
+  ===================== -->
+  <section class="section is-inview">
+    <div class="section-inner">
+
+      <!-- ここにJSでカードを流し込む -->
+      <div id="blogList" class="blog-grid"></div>
+
+      <!-- エラー/読み込み表示 -->
+      <p id="blogStatus" style="margin-top:14px; opacity:.75;"></p>
+
+    </div>
+  </section>
+
+  <!-- =====================
+    トップに戻る（メインTOPへ）
+  ===================== -->
+  <section class="section is-inview">
+    <div class="section-inner" style="text-align:center;">
+      <a href="../index.html#top" class="btn-secondary">トップページに戻る</a>
+    </div>
+  </section>
+
+  <!-- 右下固定：メインTOPへ戻す -->
+  <a href="../index.html#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
+</main>
+
+<!-- =====================
+  フッター（最低限）
+===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 焼とりとぶた串 一期</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== Drawer (mobile menu) =====
+  const btn = document.querySelector('.nav-toggle');
+  const drawer = document.querySelector('#drawerMenu');
+  const overlay = document.querySelector('.drawer-overlay');
+
+  function openDrawer() {
+    if(!btn || !drawer || !overlay) return;
+    drawer.classList.add('is-open');
+    overlay.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if(!btn || !drawer || !overlay) return;
+    drawer.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  btn?.addEventListener('click', () => {
+    drawer?.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  document.querySelectorAll('[data-close="drawer"]').forEach(el => {
+    el.addEventListener('click', closeDrawer);
+  });
+
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  // ===== Page Top button show/hide（style.cssに is-show がある前提） =====
+  const pageTop = document.querySelector('.page-top');
+  function togglePageTop(){
+    if(!pageTop) return;
+    const y = window.scrollY || document.documentElement.scrollTop;
+    if (y > 480) pageTop.classList.add('is-show');
+    else pageTop.classList.remove('is-show');
+  }
+  window.addEventListener('scroll', togglePageTop, { passive: true });
+  togglePageTop();
+
+  // ===== Blog list render (posts.json) =====
+const listEl = document.getElementById('blogList');
+const statusEl = document.getElementById('blogStatus');
+
+function esc(s){
+  return String(s ?? '')
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#39;");
+}
+
+function fmtDateYYYYMMDD(dateStr){
+  const m = String(dateStr || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return esc(dateStr || '');
+  return `${m[1]}.${m[2]}.${m[3]}`;
+}
+
+(async () => {
+  try {
+    if(statusEl) statusEl.textContent = '読み込み中...';
+
+    // blog/index.html から見て posts.json は同階層
+    const res = await fetch('./posts.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('posts.jsonが読み込めません（' + res.status + '）');
+
+    const posts = await res.json();
+    if (!Array.isArray(posts)) throw new Error('posts.jsonの形式が不正です（配列になっていません）');
+
+    // 新しい順
+    posts.sort((a,b) => (String(b.date||'')).localeCompare(String(a.date||'')));
+
+    if(posts.length === 0){
+      if(statusEl) statusEl.textContent = 'まだ記事がありません。';
+      return;
+    }
+
+    // ✅ 一覧は「全部」出す（sliceしない）
+    listEl.innerHTML = posts.map(p => {
+      const href = `./posts/${encodeURIComponent(p.slug)}.html`;
+      const bg = p.image ? `style="background-image:url('${esc(p.image)}');"` : '';
+      const dateISO = esc(p.date);
+      const dateDisp = fmtDateYYYYMMDD(p.date);
+
+      return `
+        <article class="blog-card">
+          <a href="${href}">
+            <div class="blog-image" ${bg}></div>
+            <div class="blog-body">
+              <time class="blog-date" datetime="${dateISO}">${dateDisp}</time>
+              <h3 class="blog-title">${esc(p.title)}</h3>
+              <p class="blog-excerpt">${esc(p.excerpt)}</p>
+            </div>
+          </a>
+        </article>
+      `;
+    }).join('');
+
+    if(statusEl) statusEl.textContent = '';
+
+  } catch (e) {
+    if(statusEl) statusEl.textContent = 'エラー：' + (e?.message || e);
+    console.error(e);
+  }
+})();
+
+</script>
+
+</body>
+</html>
