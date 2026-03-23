@@ -41,45 +41,47 @@
 
 <body data-page="blog-post">
 
-  <div id="shared-header"></div>
+  <main id="top">
 
-  <main class="container" id="top" style="padding:24px 16px;">
+    <div style="max-width:1080px; margin:0 auto; padding:40px 24px 48px;">
 
-    <nav style="font-size:14px; opacity:.8; margin-bottom:14px;">
-      <a href="../../" style="text-decoration:underline; color:inherit;">トップ</a>
-      <span style="opacity:.7;"> / </span>
-      <a href="../" style="text-decoration:underline; color:inherit;">ブログ・お知らせ</a>
-      <span style="opacity:.7;"> / </span>
-      <span id="post-breadcrumb">記事</span>
-    </nav>
+      <nav style="font-size:14px; opacity:.8; margin-bottom:14px;">
+        <a href="../../" style="text-decoration:underline; color:inherit;">トップ</a>
+        <span style="opacity:.7;"> / </span>
+        <a href="../" style="text-decoration:underline; color:inherit;">ブログ・お知らせ</a>
+        <span style="opacity:.7;"> / </span>
+        <span id="post-breadcrumb">記事</span>
+      </nav>
 
-    <div id="post-loading" style="padding:40px 0; text-align:center; opacity:.6;">読み込み中...</div>
+      <div id="post-loading" style="padding:40px 0; text-align:center; opacity:.6;">読み込み中...</div>
 
-    <article id="post-article" style="display:none;">
-      <header style="margin-bottom:18px;">
-        <div id="post-date" style="font-size:14px; opacity:.75;"></div>
-        <h1 id="post-title" style="margin:8px 0 0; line-height:1.35;"></h1>
-      </header>
+      <article id="post-article" style="display:none;">
+        <header style="margin-bottom:18px;">
+          <div id="post-date" style="font-size:14px; opacity:.75;"></div>
+          <h1 id="post-title" style="margin:8px 0 0; line-height:1.35;"></h1>
+        </header>
 
-      <figure id="post-figure" style="margin:0 0 18px; display:none;">
-        <img id="post-image" src="" alt="" loading="lazy"
-             style="width:100%; max-width:980px; border-radius:14px; aspect-ratio:16/9; object-fit:cover;">
-      </figure>
+        <figure id="post-figure" style="margin:0 0 18px; display:none;">
+          <img id="post-image" src="" alt="" loading="lazy"
+               style="width:100%; border-radius:14px; aspect-ratio:16/9; object-fit:cover;">
+        </figure>
 
-      <section id="post-body" style="max-width:860px; line-height:1.9; font-size:16px;"></section>
+        <section id="post-body" style="line-height:1.9; font-size:16px;"></section>
 
-      <hr style="margin:28px 0; opacity:.25;">
+        <hr style="margin:28px 0; opacity:.25;">
 
-      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+          <a href="../" style="text-decoration:underline; color:inherit;">← ブログ一覧へ戻る</a>
+          <span style="opacity:.5;">|</span>
+          <a href="../../" style="text-decoration:underline; color:inherit;">トップへ</a>
+        </div>
+      </article>
+
+      <div id="post-error" style="display:none; padding:40px 0; text-align:center;">
+        <p>記事が見つかりませんでした。</p>
         <a href="../" style="text-decoration:underline; color:inherit;">← ブログ一覧へ戻る</a>
-        <span style="opacity:.5;">|</span>
-        <a href="../../" style="text-decoration:underline; color:inherit;">トップへ</a>
       </div>
-    </article>
 
-    <div id="post-error" style="display:none; padding:40px 0; text-align:center;">
-      <p>記事が見つかりませんでした。</p>
-      <a href="../" style="text-decoration:underline; color:inherit;">← ブログ一覧へ戻る</a>
     </div>
 
     <div id="shared-bottom"></div>

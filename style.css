@@ -972,6 +972,10 @@ body[data-page="home"] .back-to-top-home{
 body:not([data-page="home"]) main{
   padding-top: var(--header-h);
 }
+/* ブログ記事ページ：ヘッダーなしのため余白リセット */
+body[data-page="blog-post"] main{
+  padding-top: 0;
+}
 
 
 /* もっと見るボタン（共通） */
