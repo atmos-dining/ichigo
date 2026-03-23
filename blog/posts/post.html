@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ブログ｜焼とりとぶた串 一期（いちご）</title>
+  <meta name="description" content="焼とりとぶた串 一期（いちご）のブログ記事です。" />
+
+  <!-- canonical / OGP はJS側で動的に設定 -->
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <link rel="icon" href="../../favicon-ichigo.ico" />
+
+  <!-- OGP（JS で上書き） -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="焼とりとぶた串 一期（いちご）" />
+  <meta property="og:title" content="ブログ｜焼とりとぶた串 一期（いちご）" />
+  <meta property="og:description" content="焼とりとぶた串 一期（いちご）のブログ記事です。" />
+  <meta property="og:image" content="https://yakitori-ichigo.com/images/hero-ichigo.jpg" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <!-- Twitter(X) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLP2X1GZG0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QLP2X1GZG0');
+  </script>
+</head>
+
+<body data-page="blog-post">
+
+  <div id="shared-header"></div>
+
+  <main class="container" id="top" style="padding:24px 16px;">
+
+    <nav style="font-size:14px; opacity:.8; margin-bottom:14px;">
+      <a href="../../" style="text-decoration:underline; color:inherit;">トップ</a>
+      <span style="opacity:.7;"> / </span>
+      <a href="../" style="text-decoration:underline; color:inherit;">ブログ・お知らせ</a>
+      <span style="opacity:.7;"> / </span>
+      <span id="post-breadcrumb">記事</span>
+    </nav>
+
+    <div id="post-loading" style="padding:40px 0; text-align:center; opacity:.6;">読み込み中...</div>
+
+    <article id="post-article" style="display:none;">
+      <header style="margin-bottom:18px;">
+        <div id="post-date" style="font-size:14px; opacity:.75;"></div>
+        <h1 id="post-title" style="margin:8px 0 0; line-height:1.35;"></h1>
+      </header>
+
+      <figure id="post-figure" style="margin:0 0 18px; display:none;">
+        <img id="post-image" src="" alt="" loading="lazy"
+             style="width:100%; max-width:980px; border-radius:14px; aspect-ratio:16/9; object-fit:cover;">
+      </figure>
+
+      <section id="post-body" style="max-width:860px; line-height:1.9; font-size:16px;"></section>
+
+      <hr style="margin:28px 0; opacity:.25;">
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <a href="../" style="text-decoration:underline; color:inherit;">← ブログ一覧へ戻る</a>
+        <span style="opacity:.5;">|</span>
+        <a href="../../" style="text-decoration:underline; color:inherit;">トップへ</a>
+      </div>
+    </article>
+
+    <div id="post-error" style="display:none; padding:40px 0; text-align:center;">
+      <p>記事が見つかりませんでした。</p>
+      <a href="../" style="text-decoration:underline; color:inherit;">← ブログ一覧へ戻る</a>
+    </div>
+
+    <div id="shared-bottom"></div>
+
+    <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
+  </main>
+
+  <script src="../../common.js"></script>
+
+  <script>
+  (function() {
+    // URLパラメータから slug を取得
+    var slug = new URLSearchParams(location.search).get('slug');
+
+    if (!slug) {
+      document.getElementById('post-loading').style.display = 'none';
+      document.getElementById('post-error').style.display = 'block';
+      return;
+    }
+
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+
+    function fmtDate(d) {
+      var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!m) return esc(d||'');
+      return m[1] + '年' + parseInt(m[2]) + '月' + parseInt(m[3]) + '日';
+    }
+
+    // 画像パスを posts/ 基準から調整
+    function fixImagePath(src) {
+      if (!src) return '';
+      // "./images/xxx.jpg" → "../images/xxx.jpg"
+      if (src.startsWith('./')) return '../' + src.slice(2);
+      // "../images/xxx.jpg" → "../../images/xxx.jpg"
+      if (src.startsWith('../')) return '../../' + src.slice(3);
+      return src;
+    }
+
+    (async function() {
+      try {
+        var res = await fetch('../posts.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(res.status);
+        var data = await res.json();
+        var posts = data.posts != null ? data.posts : data;
+        if (!Array.isArray(posts)) throw new Error('format error');
+
+        var post = posts.find(function(p) { return p.slug === slug; });
+
+        document.getElementById('post-loading').style.display = 'none';
+
+        if (!post) {
+          document.getElementById('post-error').style.display = 'block';
+          return;
+        }
+
+        // --- title / meta の動的更新 ---
+        var pageTitle = esc(post.title) + '｜焼とりとぶた串 一期（いちご）';
+        document.title = pageTitle;
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', esc(post.excerpt || post.title));
+
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', esc(post.excerpt || post.title));
+        var twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
+
+        var imgSrc = fixImagePath(post.image || '');
+        if (imgSrc) {
+          var fullUrl = 'https://yakitori-ichigo.com/' + imgSrc.replace(/^(\.\.\/)+/, '');
+          var ogImg = document.querySelector('meta[property="og:image"]');
+          if (ogImg) ogImg.setAttribute('content', fullUrl);
+        }
+
+        // --- 構造化データ（BlogPosting）をheadに追加 ---
+        var sd = {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "datePublished": post.date,
+              "dateModified": post.date,
+              "description": post.excerpt || post.title,
+              "url": "https://yakitori-ichigo.com/blog/posts/post.html?slug=" + encodeURIComponent(slug),
+              "author": {"@type": "Organization", "name": "焼とりとぶた串 一期（いちご）", "url": "https://yakitori-ichigo.com/"},
+              "publisher": {"@type": "Organization", "name": "焼とりとぶた串 一期（いちご）", "url": "https://yakitori-ichigo.com/"},
+              "isPartOf": {"@type": "Blog", "url": "https://yakitori-ichigo.com/blog/"}
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://yakitori-ichigo.com/"},
+                {"@type": "ListItem", "position": 2, "name": "ブログ・お知らせ", "item": "https://yakitori-ichigo.com/blog/"},
+                {"@type": "ListItem", "position": 3, "name": post.title}
+              ]
+            }
+          ]
+        };
+        var sdScript = document.createElement('script');
+        sdScript.type = 'application/ld+json';
+        sdScript.textContent = JSON.stringify(sd);
+        document.head.appendChild(sdScript);
+
+        // --- 記事コンテンツを描画 ---
+        document.getElementById('post-breadcrumb').textContent = post.title;
+        document.getElementById('post-date').textContent = post.date;
+        document.getElementById('post-title').textContent = post.title;
+
+        if (imgSrc) {
+          document.getElementById('post-image').src = imgSrc;
+          document.getElementById('post-image').alt = post.title + '｜焼とりとぶた串 一期（いちご）';
+          document.getElementById('post-figure').style.display = '';
+        }
+
+        // body フィールドがあればHTMLとして描画、なければ excerpt をテキストで
+        var bodyEl = document.getElementById('post-body');
+        if (post.body) {
+          bodyEl.innerHTML = post.body;
+        } else {
+          bodyEl.innerHTML = '<p>' + esc(post.excerpt || '') + '</p>';
+        }
+
+        document.getElementById('post-article').style.display = '';
+
+      } catch(e) {
+        document.getElementById('post-loading').style.display = 'none';
+        document.getElementById('post-error').style.display = 'block';
+        console.error(e);
+      }
+    })();
+  })();
+  </script>
+
+</body>
+</html>

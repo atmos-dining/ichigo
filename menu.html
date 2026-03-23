@@ -67,72 +67,10 @@
   </script>
 </head>
 
-<body>
-<div id="top"></div>
+<body data-page=”menu”>
+<div id=”top”></div>
 
-<!-- ヘッダー（一期） -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="./index.html" class="site-logo">【公式】焼とりとぶた串 一期（いちご）</a>
-      <div class="site-tagline">西新商店街の焼とり・ぶた串</div>
-    </div>
-
-    <div class="header-right">
-      <div class="header-tel header-only-desktop">
-        <span class="tel-label">ご予約・お問い合わせ</span>
-        <a href="tel:0928213791" class="tel-number">092-821-3791</a>
-      </div>
-
-      <!-- ネット予約URLは必要に応じて差し替え -->
-      <a href="https://www.hotpepper.jp/strJ001154827/"
-         target="_blank" rel="noopener"
-         class="btn-primary header-reserve header-only-desktop">
-        ネット予約はこちら
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-      </button>
-    </div>
-  </div>
-
-  <!-- PC用ナビ（下層ページは “各ページ” にリンクする） -->
-  <nav class="global-nav header-only-desktop">
-    <ul>
-      <li><a href="./index.html#top">トップ</a></li>
-      <li><a href="./index.html#concept">一期のこだわり</a></li>
-      <li><a href="./course.html">ご宴会コース</a></li>
-      <li><a href="./menu.html" aria-current="page">お料理</a></li>
-      <li><a href="./drink.html">ドリンク</a></li>
-      <li><a href="./index.html#space">店内・空間</a></li>
-      <li><a href="./index.html#blog">ブログ・お知らせ</a></li>
-      <li><a href="./index.html#reserve">ご予約について</a></li>
-      <li><a href="./index.html#access">アクセス</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- スマホ用 -->
-<div class="drawer-overlay" id="drawerOverlay" data-close="drawer" aria-hidden="true"></div>
-<aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
-  <button class="drawer-close" type="button" aria-label="閉じる" data-close="drawer">×</button>
-  <nav>
-    <ul>
-      <li><a href="./index.html#top">トップ</a></li>
-      <li><a href="./index.html#concept">一期のこだわり</a></li>
-      <li><a href="./course.html">ご宴会コース</a></li>
-      <li><a href="./menu.html" aria-current="page">お料理</a></li>
-      <li><a href="./drink.html">ドリンク</a></li>
-      <li><a href="./index.html#space">店内・空間</a></li>
-      <li><a href="./index.html#blog">ブログ・お知らせ</a></li>
-      <li><a href="./index.html#reserve">ご予約について</a></li>
-      <li><a href="./index.html#access">アクセス</a></li>
-    </ul>
-  </nav>
-</aside>
+<div id=”shared-header”></div>
 
 <main id="main">
 
@@ -323,60 +261,7 @@
 
 </main>
 
-<script>
-  // Drawer
-  const btn = document.querySelector('.nav-toggle');
-  const drawer = document.querySelector('#drawerMenu');
-  const overlay = document.querySelector('#drawerOverlay');
-
-  function openDrawer(){
-    drawer.classList.add('is-open');
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    btn?.setAttribute('aria-expanded', 'true');
-    drawer?.setAttribute('aria-hidden', 'false');
-    overlay?.setAttribute('aria-hidden', 'false');
-  }
-  function closeDrawer(){
-    drawer.classList.remove('is-open');
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
-    btn?.setAttribute('aria-expanded', 'false');
-    drawer?.setAttribute('aria-hidden', 'true');
-    overlay?.setAttribute('aria-hidden', 'true');
-  }
-
-  btn?.addEventListener('click', () => drawer.classList.contains('is-open') ? closeDrawer() : openDrawer());
-  document.querySelectorAll('[data-close="drawer"]').forEach(el => el.addEventListener('click', closeDrawer));
-  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-  // 共通下部（予約〜フッター）を読み込む
-  // ※ menu.html がルート直下ならこのまま。サブフォルダなら ../partials/bottom.html に直す
-  fetch('./partials/bottom.html')
-    .then(r => r.text())
-    .then(html => {
-      const mount = document.querySelector('#shared-bottom');
-      if (!mount) return;
-      mount.innerHTML = html;
-
-      // 差し込まれたsectionも “必ず表示”
-      mount.querySelectorAll('.section').forEach(sec => sec.classList.add('is-inview'));
-    })
-    .catch(() => {
-      // 読み込み失敗しても本文は見える（is-inviewをHTML側で付けてるため）
-    });
-
-  // ページトップボタン：一定スクロールで表示
-  const pageTop = document.querySelector('.page-top');
-  function togglePageTop(){
-    if(!pageTop) return;
-    const y = window.scrollY || document.documentElement.scrollTop;
-    if (y > 480) pageTop.classList.add('is-show');
-    else pageTop.classList.remove('is-show');
-  }
-  window.addEventListener('scroll', togglePageTop, { passive: true });
-  togglePageTop();
-</script>
+<script src=”./common.js”></script>
 
 </body>
 </html>

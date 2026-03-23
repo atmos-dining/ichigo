@@ -12,7 +12,7 @@
   <!-- canonical -->
   <link rel="canonical" href="https://yakitori-ichigo.com/" />
 
-  <!-- robots（画像の大きなプレビューを許可） -->
+  <!-- robots -->
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <!-- favicon -->
@@ -43,7 +43,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
 
-  <!-- Google Search Console（必要なら置き換え） -->
+  <!-- Google Search Console -->
   <meta name="google-site-verification" content="fEvCAuuNOJUX_cIdKbewT7C0nvKQAhyJK-aItCsk_Sc" />
 
   <!-- 構造化データ（Restaurant） -->
@@ -65,6 +65,9 @@
     "acceptsReservations": "True",
     "currenciesAccepted": "JPY",
     "paymentAccepted": "Cash, Credit Card, PayPay",
+    "smokingAllowed": false,
+    "publicAccess": true,
+    "hasMap": "https://www.google.com/maps?q=33.58219071,130.35622804",
     "address": {
       "@type": "PostalAddress",
       "postalCode": "814-0002",
@@ -89,7 +92,81 @@
   }
   </script>
 
-    <!-- Google tag (gtag.js) : 焼とりとぶた串 一期 -->
+  <!-- 構造化データ（FAQPage：AEO対策） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期の営業時間は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "17:00〜翌0:00（料理L.O. 23:00／ドリンクL.O. 23:00）です。日によって変更となる場合があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期はどこにありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "福岡県福岡市早良区西新5-15-10にあります。地下鉄空港線「西新駅」から徒歩約5分、西新商店街を直進したところです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期は予約できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、お電話（092-821-3791）またはホットペッパー（https://www.hotpepper.jp/strJ001154827/）からネット予約が可能です。席のみ予約・コース予約どちらも承っております。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期の定休日はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "定休日はございません（無休）。ただし臨時休業の場合がありますので、お問い合わせください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期に駐車場はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "店舗専用の駐車場はございません。お近くのコインパーキングをご利用ください。西新駅から徒歩約5分ですので、公共交通機関でのご来店がおすすめです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期で使える支払い方法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現金のほか、VISA・Master・JCB・AMEXなどのクレジットカード、PayPayなどのQRコード決済がご利用いただけます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期の名物メニューは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "名物は「ぶた串」です。豚バラ2本串をはじめ、しそチーズやアボカドチーズなど種類豊富。朝引き鶏の焼とり、野菜巻き、〆の土鍋かしわ飯も人気です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "焼とりとぶた串 一期は何時から営業していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "毎日17:00から営業しています。ラストオーダーは料理・ドリンクともに23:00です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLP2X1GZG0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -99,74 +176,9 @@
   </script>
 </head>
 
-<body class="is-home">
+<body data-page="home">
 
-  <!-- ヘッダー -->
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="header-brand">
-        <div class="site-logo">【公式】焼とりとぶた串 一期</div>
-        <div class="site-tagline">西新商店街の焼とり・ぶた串</div>
-      </div>
-
-      <div class="header-right">
-        <div class="header-tel header-only-desktop">
-          <span class="tel-label">ご予約・お問い合わせ</span>
-          <a href="tel:0928213791" class="tel-number">092-821-3791</a>
-        </div>
-
-        <a href="https://www.hotpepper.jp/strJ001154827/"
-          target="_blank" rel="noopener"
-          class="btn-primary header-reserve header-only-desktop"
-          onclick="gtag('event','click_reserve', {event_label:'header_reserve'});">
-          ネット予約はこちら
-        </a>
-
-        <!-- スマホ用：三本線 -->
-        <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- PC用ナビ -->
-    <nav class="global-nav header-only-desktop">
-      <ul>
-        <li><a href="#top">トップ</a></li>
-        <li><a href="#concept">一期のこだわり</a></li>
-        <li><a href="#course">ご宴会コース</a></li>
-        <li><a href="#menu">お料理</a></li>
-        <li><a href="#drink">ドリンク</a></li>
-        <li><a href="#space">店内・空間</a></li>
-        <li><a href="#blog">ブログ・お知らせ</a></li>
-        <li><a href="#reserve">ご予約について</a></li>
-        <li><a href="#access">アクセス</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- スマホ用：オーバーレイ -->
-  <div class="drawer-overlay" id="drawerOverlay" data-close="drawer" aria-hidden="true"></div>
-
-  <!-- スマホ用：右から出るドロワー -->
-  <aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
-    <button class="drawer-close" type="button" aria-label="メニューを閉じる" data-close="drawer">×</button>
-    <nav>
-      <ul>
-        <li><a href="#top">トップページ</a></li>
-        <li><a href="#concept">一期のこだわり</a></li>
-        <li><a href="#course">ご宴会コース</a></li>
-        <li><a href="#menu">お料理</a></li>
-        <li><a href="#drink">ドリンク</a></li>
-        <li><a href="#space">店内・空間</a></li>
-        <li><a href="#blog">ブログ・お知らせ</a></li>
-        <li><a href="#reserve">ご予約について</a></li>
-        <li><a href="#access">アクセス</a></li>
-      </ul>
-    </nav>
-  </aside>
+  <div id="shared-header"></div>
 
   <!-- メイン -->
   <main id="top">
@@ -218,7 +230,7 @@
           <article class="topic-card">
             <div class="topic-image topic-image-2"></div>
             <h3>一人飲みも、グループも</h3>
-            <p>鮮カウンター・テーブル・掘りごたつ席をご用意。少人数の飲み会からご宴会まで幅広く対応しています。</p>
+            <p>カウンター・テーブル・掘りごたつ席をご用意。少人数の飲み会からご宴会まで幅広く対応しています。</p>
           </article>
 
           <article class="topic-card">
@@ -292,19 +304,16 @@
           </article>
         </div>
 
-        <!-- もっと見る（コース内） -->
         <div class="more-link">
           <a class="btn-secondary" href="./course.html">もっと見る →</a>
         </div>
 
-        <!-- 注意書き（コース内・区切りの最後） -->
         <p class="course-note">
           ※コース内容・価格は一例です。時期により変更となる場合がございます。<br>
           詳細は店舗までお問い合わせください。
         </p>
       </div>
     </section>
-
 
     <!-- お料理 -->
     <section id="menu" class="section menu">
@@ -392,7 +401,6 @@
         </p>
 
         <div class="blog-grid" id="blog-latest-grid">
-          <!-- JSで最新3件に置き換える（posts.jsonがある場合） -->
           <article class="blog-card">
             <a href="./blog/index.html">
               <div class="blog-body">
@@ -409,278 +417,79 @@
       </div>
     </section>
 
-    <!-- 予約案内 -->
-    <section id="reserve" class="section reserve">
-      <div class="section-inner">
-        <h2 class="section-title">ご予約について</h2>
-        <p class="section-lead">お電話またはネット予約にて承っております。<br>席のみ予約・コース予約、どちらもお気軽にお問い合わせください。</p>
+    <!-- 共通下部（予約・アクセス・フッター） -->
+    <div id="shared-bottom"></div>
 
-        <div class="reserve-grid">
-          <div class="reserve-block">
-            <h3>お電話でのご予約</h3>
-            <p class="reserve-tel-label">電話番号</p>
-            <p class="reserve-tel-number"><a href="tel:0928213791">092-821-3791</a></p>
-            <p class="reserve-time">受付時間：営業日の 17:00〜ラストまで</p>
-          </div>
-
-          <div class="reserve-block">
-            <h3>ネット予約</h3>
-            <p>24時間受付のネット予約ページからご予約いただけます。<br>コース予約・席のみ予約どちらも承っております。</p>
-            <a href="https://www.hotpepper.jp/strJ001154827/" target="_blank" rel="noopener" class="btn-primary">
-              ネット予約ページへ
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- アクセス・店舗情報 -->
-    <section id="access" class="section access">
-      <div class="section-inner">
-        <h2 class="section-title">店舗情報・アクセス</h2>
-
-        <div class="access-grid">
-          <div class="access-text">
-            <h3 class="shop-name">焼とりとぶた串 一期（いちご）</h3>
-
-            <dl class="shop-data">
-              <dt>住所</dt>
-              <dd>〒814-0002<br>福岡県福岡市早良区西新5-15-10</dd>
-
-              <dt>アクセス</dt>
-              <dd>地下鉄空港線「西新駅」徒歩約5分<br>西新商店街を直進</dd>
-
-              <dt>電話番号</dt>
-              <dd><a href="tel:0928213791">092-821-3791</a></dd>
-
-              <dt>営業時間</dt>
-              <dd>
-                17:00～翌0:00（料理L.O. 23:00／ドリンクL.O. 23:00）<br>
-                ※日によって変更となる場合がございます
-              </dd>
-
-              <dt>定休日</dt>
-              <dd>なし（無休）</dd>
-
-              <dt>決済方法</dt>
-              <dd>クレジットカード：VISA／Master／JCB／AMEX ほか<br>QRコード決済：PayPay ほか</dd>
-            </dl>
-          </div>
-
-          <div class="access-map">
-            <iframe
-              src="https://www.google.com/maps?q=33.58219071,130.35622804&hl=ja&z=16&output=embed"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <div class="site-logo">焼とりとぶた串 一期（いちご）</div>
-            <p>西新商店街の焼とり・ぶた串</p>
-          </div>
-          <div class="footer-contact">
-            <p class="footer-tel-label">電話でのご予約はこちら</p>
-            <p class="footer-tel-number"><a href="tel:0928213791">092-821-3791</a></p>
-            <a href="https://www.hotpepper.jp/strJ001154827/" target="_blank" rel="noopener" class="btn-primary footer-reserve">
-              ネット予約はこちら
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p class="footer-copy">© 2026 焼とりとぶた串 一期（いちご）. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- ページトップボタン（main内に置く） -->
+    <!-- ページトップボタン -->
     <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
 
   </main>
 
+  <script src="./common.js"></script>
+
   <script>
-    // ===== Drawer (mobile menu) =====
-    const navBtn = document.querySelector('.nav-toggle');
-    const drawer = document.querySelector('#drawerMenu');
-    const overlay = document.querySelector('#drawerOverlay');
+  // トップ：ブログ最新3件を自動表示（posts.json wrapped形式対応）
+  (function() {
+    var grid = document.getElementById('blog-latest-grid');
+    if (!grid) return;
 
-    function openDrawer() {
-      if (!drawer || !overlay || !navBtn) return;
-      drawer.classList.add('is-open');
-      overlay.classList.add('is-open');
-      navBtn.setAttribute('aria-expanded', 'true');
-      drawer.setAttribute('aria-hidden', 'false');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+    function esc(s){
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+    function fmtDate(d){
+      var m = String(d||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      return m ? m[1]+'.'+m[2]+'.'+m[3] : esc(d||'');
     }
 
-    function closeDrawer() {
-      if (!drawer || !overlay || !navBtn) return;
-      drawer.classList.remove('is-open');
-      overlay.classList.remove('is-open');
-      navBtn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('aria-hidden', 'true');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    navBtn?.addEventListener('click', () => {
-      drawer?.classList.contains('is-open') ? closeDrawer() : openDrawer();
-    });
-
-    document.querySelectorAll('[data-close="drawer"]').forEach(el => {
-      el.addEventListener('click', closeDrawer);
-    });
-
-    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDrawer();
-    });
-
-    // ===== Page Top button show/hide =====
-    const pageTop = document.querySelector('.page-top');
-    function togglePageTop(){
-      if(!pageTop) return;
-      const y = window.scrollY || document.documentElement.scrollTop;
-      if (y > 480) pageTop.classList.add('is-show');
-      else pageTop.classList.remove('is-show');
-    }
-    window.addEventListener('scroll', togglePageTop, { passive: true });
-    togglePageTop();
-
-    // ===== Scroll reveal for sections =====
-    const sections = document.querySelectorAll('.section');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('is-inview');
-          io.unobserve(entry.target);
-        }
+    fetch('./blog/posts.json', { cache: 'no-store' })
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(data){
+        var posts = (data.posts != null ? data.posts : data);
+        if (!Array.isArray(posts)) throw new Error('format error');
+        posts.sort(function(a,b){ return String(b.date||'').localeCompare(String(a.date||'')); });
+        var top3 = posts.slice(0,3);
+        grid.innerHTML = '';
+        top3.forEach(function(p){
+          var href = './blog/posts/post.html?slug=' + encodeURIComponent(p.slug);
+          var img = p.image ? String(p.image).replace(/^\.\//, './blog/') : '';
+          var bg = img ? 'background-image:url(\'' + esc(img) + '\');' : '';
+          var el = document.createElement('article');
+          el.className = 'blog-card';
+          el.innerHTML = '<a href="' + href + '">'
+            + '<div class="blog-image" style="' + bg + '"></div>'
+            + '<div class="blog-body">'
+            + '<time class="blog-date" datetime="' + esc(p.date) + '">' + fmtDate(p.date) + '</time>'
+            + '<h3 class="blog-title">' + esc(p.title) + '</h3>'
+            + '<p class="blog-excerpt">' + esc(p.excerpt) + '</p>'
+            + '</div></a>';
+          grid.appendChild(el);
+        });
+      })
+      .catch(function(){
+        grid.innerHTML = '<article class="blog-card"><a href="./blog/index.html">'
+          + '<div class="blog-body"><h3 class="blog-title">ブログ一覧を見る</h3>'
+          + '<p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>'
+          + '</div></a></article>';
       });
-    }, {
-      root: null,
-      threshold: 0.12,
-      rootMargin: '0px 0px -10% 0px'
-    });
-    sections.forEach(sec => io.observe(sec));
-
-    // ===== トップ：ブログ最新3件を自動表示（posts.json: slug対応版） =====
-(() => {
-  const grid = document.getElementById('blog-latest-grid');
-  if (!grid) return;
-
-  function esc(s){
-    return String(s ?? '')
-      .replaceAll('&','&amp;')
-      .replaceAll('<','&lt;')
-      .replaceAll('>','&gt;')
-      .replaceAll('"','&quot;')
-      .replaceAll("'","&#39;");
-  }
-
-  function fmtDate(dateStr){
-    const m = String(dateStr || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if (!m) return esc(dateStr || '');
-    return `${m[1]}.${m[2]}.${m[3]}`;
-  }
-
-  fetch('./blog/posts.json', { cache: 'no-store' })
-    .then(r => {
-      if(!r.ok) throw new Error('posts.json not found: ' + r.status);
-      return r.json();
-    })
-    .then(posts => {
-      if (!Array.isArray(posts)) throw new Error('posts.json is not array');
-
-      posts.sort((a,b) => String(b.date||'').localeCompare(String(a.date||'')));
-
-      // ✅ 最新3件だけ
-      const top3 = posts.slice(0, 3);
-
-      grid.innerHTML = '';
-
-      top3.forEach(p => {
-        const title = esc(p.title);
-        const excerpt = esc(p.excerpt);
-        const dateISO = esc(p.date);
-        const dateText = fmtDate(p.date);
-
-        const href = `./blog/posts/${encodeURIComponent(p.slug)}.html`;
-
-        // posts.json は "./images/xxx.jpg"（blog基準） → トップでは "./blog/" を足す
-        const img = p.image ? String(p.image).replace(/^\.\//, './blog/') : '';
-        const bg = img ? `background-image:url('${esc(img)}');` : '';
-
-        const article = document.createElement('article');
-        article.className = 'blog-card';
-        article.innerHTML = `
-          <a href="${href}">
-            <div class="blog-image" style="${bg}"></div>
-            <div class="blog-body">
-              <time class="blog-date" datetime="${dateISO}">${dateText}</time>
-              <h3 class="blog-title">${title}</h3>
-              <p class="blog-excerpt">${excerpt}</p>
-            </div>
-          </a>
-        `;
-        grid.appendChild(article);
-      });
-    })
-    .catch(err => {
-      console.error('posts.json load failed:', err);
-      // 失敗時は導線だけ残す
-      grid.innerHTML = `
-        <article class="blog-card">
-          <a href="./blog/index.html">
-            <div class="blog-body">
-              <h3 class="blog-title">ブログ一覧を見る</h3>
-              <p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>
-            </div>
-          </a>
-        </article>
-      `;
-    });
-})();
+  })();
   </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-
-    el.addEventListener("click", function(e){
-
-      e.preventDefault();
-
-      var number = this.getAttribute("href");
-
-      if (typeof gtag === "function") {
-        gtag("event", "click_tel", {
-          event_label: number
-        });
-      }
-
-      setTimeout(function(){
-        window.location.href = number;
-      }, 250);
-
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        var number = this.getAttribute('href');
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_tel', { event_label: number });
+        }
+        setTimeout(function(){ window.location.href = number; }, 250);
+      });
     });
-
   });
-
-});
-</script>
+  </script>
 
 </body>
 </html>
