@@ -43,26 +43,26 @@ h1,h2,h3,h4{
 /* --------------- layout helpers --------------- */
 
 .section{
-  padding: 72px 16px;
+  padding: 56px 16px;
   scroll-margin-top: var(--header-h);
 }
 
 /* --------------- scroll reveal --------------- */
-/* TOP（body.is-home）だけアニメさせる */
-body.is-home .section{
+/* TOP（body[data-page="home"]）だけアニメさせる */
+body[data-page="home"] .section{
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .6s ease, transform .6s ease;
   will-change: opacity, transform;
 }
 
-body.is-home .section.is-inview{
+body[data-page="home"] .section.is-inview{
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 下層ページ（is-homeじゃない）は最初から表示 */
-body:not(.is-home) .section{
+/* 下層ページは最初から表示 */
+body:not([data-page="home"]) .section{
   opacity: 1;
   transform: none;
   transition: none;
@@ -905,7 +905,7 @@ body:not(.is-home) .section{
 }
 
 @media (max-width: 640px){
-  .section{ padding: 56px 12px; }
+  .section{ padding: 48px 16px; }
   .section-title{ font-size: 22px; }
 
   .topics-grid,
@@ -964,13 +964,13 @@ body:not(.is-home) .section{
 
 
 /* TOPページでは「トップページに戻る」を出さない */
-.is-home .back-to-top-home{
+body[data-page="home"] .back-to-top-home{
   display: none;
 }
 
 /* 下層ページ：固定ヘッダー分だけ上に余白を作る */
-body:not(.is-home) main{
-  padding-top: calc(var(--header-h) + 16px);
+body:not([data-page="home"]) main{
+  padding-top: var(--header-h);
 }
 
 
@@ -1007,8 +1007,8 @@ body:not(.is-home) main{
 ========================================= */
 
 .page-head{
-  padding-top: 0;        /* ← ヘッダー分は main が持つ */
-  padding-bottom: 24px;  /* ← ドリンクと同じ見え方に寄せる */
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 
@@ -1022,7 +1022,7 @@ body:not(.is-home) main{
 .page-lead{
   text-align: center;
   color: #666;
-  margin: 0;
+  margin: 0 0 40px;
 }
 
 /* cards / panels */
@@ -1149,8 +1149,7 @@ body:not(.is-home) main{
 /* ===== drink page ===== */
 
 .page-hero{
-  padding-top: 0;
-  padding-bottom: 24px;
+  padding: 0;
   background: #faf7f4;
 }
 
@@ -1163,7 +1162,7 @@ body:not(.is-home) main{
 
 .page-lead{
   text-align: center;
-  margin: 0;
+  margin: 0 0 40px;
   color: #666;
 }
 
@@ -1413,35 +1412,16 @@ a.btn-more:hover{
    （menu.html の section.section のみ効かせる）
    ========================= */
 
-/* PC */
+/* メニューページ：セクション間の余白を詰める */
 .section.menu-page{
   padding-top: 44px;
   padding-bottom: 44px;
 }
 
-/* ページ見出しは、さらに少し詰める（好み） */
-.section.page-head{
-  padding-top: 44px;     /* ←ヘッダー下の余白もここで統一 */
-  padding-bottom: 32px;
-}
-
-/* タイトル周りの“中身の余白”も少し縮める */
-.menu-page .section-title{
-  margin-bottom: 18px;
-}
-.menu-page .section-lead{
-  margin-bottom: 22px;
-}
-
-/* スマホ */
 @media (max-width: 640px){
   .section.menu-page{
     padding-top: 32px;
     padding-bottom: 32px;
-  }
-  .section.page-head{
-    padding-top: 32px;
-    padding-bottom: 22px;
   }
 }
 
@@ -1451,17 +1431,16 @@ a.btn-more:hover{
 
 .menu-feature-image{
   max-width: 1080px;
-  margin: 0 auto 28px;
-  border-radius: 18px;
+  margin: 18px auto 26px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
 
 .menu-feature-image img{
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
 /* スマホは少しコンパクトに */
@@ -1476,47 +1455,22 @@ a.btn-more:hover{
    ドリンクページ：見出し下イメージ
    ========================= */
 
-.drink-feature{
-  padding-top: 24px;
-  padding-bottom: 32px;
-}
-
 .drink-feature-image{
   max-width: 1080px;
-  margin: 0 auto;
-  border-radius: 18px;
+  margin: 18px auto 26px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
 
 .drink-feature-image img{
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
-/* スマホ調整 */
-@media (max-width: 640px){
-  .drink-feature{
-    padding-top: 16px;
-    padding-bottom: 24px;
-  }
-  .drink-feature-image{
-    border-radius: 14px;
-  }
-}
-
-/* menu.html：ページ見出しは .section の余白を消して drink と揃える */
+/* ページ見出しセクション：ヘッダー分は main が持つので上余白なし */
 .section.page-head{
-  padding-top: 0 !important;
-  padding-bottom: 24px !important;
-}
-
-/* スマホも合わせる */
-@media (max-width: 640px){
-  .section.page-head{
-    padding-top: 0 !important;
-    padding-bottom: 22px !important;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
 }

@@ -11,7 +11,7 @@
       const src = s.getAttribute('src');
       if (src && src.includes('common.js')) {
         const ups = (src.match(/\.\.\//g) || []).length;
-        return '../'.repeat(ups);
+        return ups === 0 ? './' : '../'.repeat(ups);
       }
     }
     return './';
