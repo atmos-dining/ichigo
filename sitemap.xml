@@ -4,7 +4,7 @@
   <!-- トップページ -->
   <url>
     <loc>https://yakitori-ichigo.com/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- お料理 -->
   <url>
     <loc>https://yakitori-ichigo.com/menu.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- ご宴会コース -->
   <url>
     <loc>https://yakitori-ichigo.com/course.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- ドリンク -->
   <url>
     <loc>https://yakitori-ichigo.com/drink.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,44 +36,44 @@
   <!-- ブログ一覧 -->
   <url>
     <loc>https://yakitori-ichigo.com/blog/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- ブログ記事 -->
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-15-blog-open.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-15-blog-open</loc>
     <lastmod>2026-01-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-12-how-to-enjoy.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-12-how-to-enjoy</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-10-busy-time.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-10-busy-time</loc>
     <lastmod>2026-01-10</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-08-special-menu.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-08-special-menu</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-05-solo.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-05-solo</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yakitori-ichigo.com/blog/posts/2026-01-03-safety.html</loc>
+    <loc>https://yakitori-ichigo.com/blog/posts/post.html?slug=2026-01-03-safety</loc>
     <lastmod>2026-01-03</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
