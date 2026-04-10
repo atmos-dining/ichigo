@@ -98,6 +98,9 @@
     var slug = new URLSearchParams(location.search).get('slug');
 
     if (!slug) {
+      // スラッグなし＝エラー状態なのでGoogleにインデックスさせない
+      var robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta) robotsMeta.setAttribute('content', 'noindex, follow');
       document.getElementById('post-loading').style.display = 'none';
       document.getElementById('post-error').style.display = 'block';
       return;
@@ -141,6 +144,12 @@
           document.getElementById('post-error').style.display = 'block';
           return;
         }
+
+        // --- canonical を静的ファイル URL に設定（SEO: post.html?slug= は代替扱い）---
+        var canonicalEl = document.querySelector('link[rel="canonical"]') || document.createElement('link');
+        canonicalEl.rel = 'canonical';
+        canonicalEl.href = 'https://yakitori-ichigo.com/blog/posts/' + slug + '.html';
+        if (!canonicalEl.parentNode) document.head.appendChild(canonicalEl);
 
         // --- title / meta の動的更新 ---
         var pageTitle = esc(post.title) + '｜焼とりとぶた串 一期（いちご）';
