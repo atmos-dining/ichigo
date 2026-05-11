@@ -207,13 +207,13 @@
           document.getElementById('post-figure').style.display = '';
         }
 
-        // body フィールドがあればHTMLとして描画、なければ excerpt をテキストで
+        // body フィールドがあればHTML/Markdownとして描画、なければ excerpt をテキストで
         var bodyEl = document.getElementById('post-body');
-        if (post.body) {
-          bodyEl.innerHTML = post.body;
-        } else {
-          bodyEl.innerHTML = '<p>' + esc(post.excerpt || '') + '</p>';
-        }
+        var rawBody = post.body || '<p>' + esc(post.excerpt || '') + '</p>';
+        var bodyHtml = (typeof marked !== 'undefined' && !rawBody.trimStart().startsWith('<'))
+          ? marked.parse(rawBody)
+          : rawBody;
+        bodyEl.innerHTML = bodyHtml;
 
         document.getElementById('post-article').style.display = '';
 
