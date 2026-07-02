@@ -131,13 +131,19 @@
 
     (async function() {
       try {
-        var res = await fetch('../posts.json', { cache: 'no-store' });
-        if (!res.ok) throw new Error(res.status);
-        var data = await res.json();
-        var posts = data.posts != null ? data.posts : data;
-        if (!Array.isArray(posts)) throw new Error('format error');
-
-        var post = posts.find(function(p) { return p.slug === slug; });
+        // 個別ファイル（posts_data/）を優先、なければ posts.json にフォールバック
+        var post = null;
+        var individualRes = await fetch('../posts_data/' + encodeURIComponent(slug) + '.json', { cache: 'no-store' });
+        if (individualRes.ok) {
+          post = await individualRes.json();
+        } else {
+          var res = await fetch('../posts.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error(res.status);
+          var data = await res.json();
+          var posts = data.posts != null ? data.posts : data;
+          if (!Array.isArray(posts)) throw new Error('format error');
+          post = posts.find(function(p) { return p.slug === slug; });
+        }
 
         document.getElementById('post-loading').style.display = 'none';
 
