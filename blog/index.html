@@ -130,7 +130,7 @@
         }
 
         listEl.innerHTML = posts.map(function(p) {
-          var href = './posts/post.html?slug=' + encodeURIComponent(p.slug);
+          var href = '/blog/posts/post.html?slug=' + encodeURIComponent(p.slug);
           var bg = p.image ? 'style="background-image:url(\'' + esc(p.image) + '\');"' : '';
           return '<article class="blog-card">'
             + '<a href="' + href + '">'
