@@ -39,6 +39,7 @@
     gtag('js', new Date());
     gtag('config', 'G-QLP2X1GZG0');
   </script>
+<script src="../../vendor/blog-security.js"></script>
 </head>
 
 <body data-page="blog-post">
@@ -92,7 +93,8 @@
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../../vendor/dompurify/purify.min.js"></script>
+<script src="../../vendor/marked/marked.umd.js"></script>
 <script src="../../common.js"></script>
 
   <script>
@@ -211,7 +213,7 @@
         document.getElementById('post-title').textContent = post.title;
 
         if (imgSrc) {
-          document.getElementById('post-image').src = imgSrc;
+          document.getElementById('post-image').src = BlogSecurity.imageURL(imgSrc);
           document.getElementById('post-image').alt = post.title + '｜焼とりとぶた串 一期（いちご）';
           document.getElementById('post-figure').style.display = '';
         }
@@ -222,7 +224,7 @@
         var bodyHtml = (typeof marked !== 'undefined' && !rawBody.trimStart().startsWith('<'))
           ? marked.parse(rawBody)
           : rawBody;
-        bodyEl.innerHTML = bodyHtml;
+        bodyEl.innerHTML = BlogSecurity.sanitizeHTML(bodyHtml);
 
         document.getElementById('post-article').style.display = '';
 

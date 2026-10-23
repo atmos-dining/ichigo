@@ -66,6 +66,7 @@
     gtag('js', new Date());
     gtag('config', 'G-QLP2X1GZG0');
   </script>
+<script src="../vendor/blog-security.js"></script>
 </head>
 
 <body data-page="blog">
@@ -131,7 +132,7 @@
 
         listEl.innerHTML = posts.map(function(p) {
           var href = '/blog/posts/post.html?slug=' + encodeURIComponent(p.slug);
-          var bg = p.image ? 'style="background-image:url(\'' + esc(p.image) + '\');"' : '';
+          var bg = p.image ? 'style="background-image:url(\'' + esc(BlogSecurity.imageURL(p.image)) + '\');"' : '';
           return '<article class="blog-card">'
             + '<a href="' + href + '">'
             + '<div class="blog-image" ' + bg + '></div>'
